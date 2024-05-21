@@ -24,6 +24,26 @@
             "conditions": [
                 {
                     "type": "origins:on_block"
+                },
+                {
+                    "type": "origins:sneaking"
+                }
+            ]
+        }
+    },
+    "gain_energy_while_sneaking": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "manhunt:imp/flight_energy",
+            "change": 1
+        },
+        "interval": 3,
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:on_block"
                 }
             ]
         }
@@ -108,7 +128,7 @@
         "entity_action": {
             "type": "origins:change_resource",
             "resource": "manhunt:imp/flight_energy",
-            "change": -6
+            "change": -3
         },
         "key": {
             "key": "key.origins.primary_active"
