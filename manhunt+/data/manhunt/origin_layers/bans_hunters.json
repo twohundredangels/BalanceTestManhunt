@@ -45,7 +45,9 @@
                 "manhunt:bans/falconer",
                 "manhunt:bans/piglin",
                 "manhunt:bans/enchanter",
-                "manhunt:bans/courier"
+                "manhunt:bans/courier",
+                "manhunt:bans/xolotl",
+                "manhunt:bans/wisp"
             ]
         }
     ],

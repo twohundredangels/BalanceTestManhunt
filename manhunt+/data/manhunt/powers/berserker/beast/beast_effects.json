@@ -372,6 +372,11 @@
         "start_value": 1,
         "hud_render": {
             "should_render": false
+        },
+        "min_action": {
+            "type": "origins:execute_command",
+            "command": "playsound minecraft:entity.zoglin.death player @a ~ ~ ~ 1 1.5",
+            "permission_level": 4
         }
     },
     "unstoppable": {
@@ -397,23 +402,28 @@
             "type": "origins:and",
             "actions": [
                 {
-                    "type": "origins:execute_command",
-                    "command": "power grant @s manhunt:berserker/beast/disabled"
-                },
-                {
                     "type": "origins:target_action",
                     "action": {
-                        "type": "origins:modify_inventory",
-                        "item_condition": {
-                            "type": "origins:ingredient",
-                            "ingredient": {
-                                "item": "minecraft:shield"
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:execute_command",
+                                "command": "power grant @s manhunt:berserker/beast/disabled"
+                            },
+                            {
+                                "type": "origins:modify_inventory",
+                                "item_condition": {
+                                    "type": "origins:ingredient",
+                                    "ingredient": {
+                                        "item": "minecraft:shield"
+                                    }
+                                },
+                                "item_action": {
+                                    "type": "apugli:cooldown",
+                                    "ticks": 100
+                                }
                             }
-                        },
-                        "item_action": {
-                            "type": "apugli:cooldown",
-                            "ticks": 100
-                        }
+                        ]
                     }
                 }
             ]
